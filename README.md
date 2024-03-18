@@ -24,7 +24,7 @@ This code will save two important files i) the model and ii) unseen metrics file
 
 # Step:5
 To visualise the classifier's performance on unseen data, run 'unseen-inference-metrics.py' file. 
-This code will show accuracy, precision and f-score alon with a confusion matrix.
+This code will show accuracy, precision and f-score along with a confusion matrix.
 ```bash
 python3 unseen-inference-metrics.py
 ```
