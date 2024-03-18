@@ -8,7 +8,7 @@ model_path = "saved-model/george_test_task"
 classify_image = "dataset/george_test_task/georges/0a5f7b5996063605dd05887ef4d31855.jpg"
 
 classes_values = listdir("dataset/george_test_task")
-classes_values.remove('.DS_Store')
+
 
 # Load the model
 load_model = tf.keras.models.load_model(model_path)
