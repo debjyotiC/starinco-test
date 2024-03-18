@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 classes_values = listdir("dataset/george_test_task")
-classes_values.remove('.DS_Store')
+
 
 classes = len(classes_values)
 
@@ -37,6 +37,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.MaxPooling2D(2, 2),
     tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2, 2),
+    tf.keras.layers.Dropout(0.25),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(512, activation='relu'),
     tf.keras.layers.Dense(classes, activation='softmax')
@@ -44,15 +45,15 @@ model = tf.keras.models.Sequential([
 
 
 model.summary()
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss=tf.keras.losses.categorical_crossentropy,
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.00001), loss=tf.keras.losses.categorical_crossentropy,
               metrics=['accuracy'])
 
 # this controls the batch size
-BATCH_SIZE = 25
+BATCH_SIZE = 10
 train_dataset = train_dataset.batch(BATCH_SIZE, drop_remainder=False)
 validation_dataset = validation_dataset.batch(BATCH_SIZE, drop_remainder=False)
 
-history = model.fit(train_dataset, epochs=10, validation_data=validation_dataset)
+history = model.fit(train_dataset, epochs=25, validation_data=validation_dataset)
 
 model.save("saved-model/george_test_task")
 
