@@ -44,15 +44,15 @@ model = tf.keras.models.Sequential([
 
 
 model.summary()
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001), loss=tf.keras.losses.categorical_crossentropy,
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss=tf.keras.losses.categorical_crossentropy,
               metrics=['accuracy'])
 
 # this controls the batch size
-BATCH_SIZE = 20
+BATCH_SIZE = 25
 train_dataset = train_dataset.batch(BATCH_SIZE, drop_remainder=False)
 validation_dataset = validation_dataset.batch(BATCH_SIZE, drop_remainder=False)
 
-history = model.fit(train_dataset, epochs=15, validation_data=validation_dataset)
+history = model.fit(train_dataset, epochs=10, validation_data=validation_dataset)
 
 model.save("saved-model/george_test_task")
 
