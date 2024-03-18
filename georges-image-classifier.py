@@ -37,9 +37,10 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.MaxPooling2D(2, 2),
     tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
     tf.keras.layers.MaxPooling2D(2, 2),
-    tf.keras.layers.Dropout(0.25),
+    tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dropout(0.2),
     tf.keras.layers.Dense(classes, activation='softmax')
 ])
 
@@ -49,11 +50,11 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.00001), loss=tf
               metrics=['accuracy'])
 
 # this controls the batch size
-BATCH_SIZE = 10
+BATCH_SIZE = 15
 train_dataset = train_dataset.batch(BATCH_SIZE, drop_remainder=False)
 validation_dataset = validation_dataset.batch(BATCH_SIZE, drop_remainder=False)
 
-history = model.fit(train_dataset, epochs=25, validation_data=validation_dataset)
+history = model.fit(train_dataset, epochs=40, validation_data=validation_dataset)
 
 model.save("saved-model/george_test_task")
 
@@ -87,4 +88,5 @@ axs[1].set_xlabel('Epoch')
 axs[1].set_ylabel('Accuracy')
 axs[1].grid(True)
 axs[1].legend(loc='best')
+plt.savefig("images/training-metrics.png", dpi=600)
 plt.show()
