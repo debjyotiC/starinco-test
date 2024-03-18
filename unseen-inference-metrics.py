@@ -10,7 +10,7 @@ data = np.load('test-results/george_test_task.npz', allow_pickle=True)
 predicted_label, actual_label = data['out_x'], data['out_y']
 
 classes_values = listdir("dataset/george_test_task")
-classes_values.remove('.DS_Store')
+
 
 label_predicted = np.argmax(predicted_label, axis=1)
 label_actual = np.argmax(actual_label, axis=1)
