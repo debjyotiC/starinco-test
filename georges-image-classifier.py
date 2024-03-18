@@ -5,6 +5,8 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 classes_values = listdir("dataset/george_test_task")
+classes_values.remove('.DS_Store')
+
 classes = len(classes_values)
 
 print("Target classes: ", classes_values)
@@ -50,7 +52,7 @@ BATCH_SIZE = 20
 train_dataset = train_dataset.batch(BATCH_SIZE, drop_remainder=False)
 validation_dataset = validation_dataset.batch(BATCH_SIZE, drop_remainder=False)
 
-history = model.fit(train_dataset, epochs=30, validation_data=validation_dataset)
+history = model.fit(train_dataset, epochs=15, validation_data=validation_dataset)
 
 model.save("saved-model/george_test_task")
 
