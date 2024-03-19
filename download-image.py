@@ -23,6 +23,8 @@ for csv_file in all_targets:
 
     image_folder_path = os.path.join(download_dir, image_folder_name)
 
+    os.makedirs(image_folder_path, exist_ok=True)
+
     image_urls = df.iloc[:, 0]
 
     for image_url in image_urls:
