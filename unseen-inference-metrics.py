@@ -39,5 +39,5 @@ ax.set_title(f'Confusion Matrix for image classifier with accuracy {round(acc, 2
 ax.xaxis.set_ticklabels(classes_values, fontsize=10, rotation=45)
 ax.yaxis.set_ticklabels(classes_values, fontsize=10, rotation=0)
 plt.tight_layout()
-plt.savefig('images/confusion_matrix.png')
+plt.savefig('images/confusion_matrix.png', dpi=600)
 plt.show()
