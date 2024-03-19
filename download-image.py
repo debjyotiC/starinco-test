@@ -5,6 +5,16 @@ import pandas as pd
 
 image_link_path = "image_links"
 download_dir = "dataset/george_test_task"
+saved_model_dir = "saved-model"
+test_result_dir = "test-results"
+performance_images = "images"
+
+# make the dirs required later in the code
+makedirs(download_dir)
+makedirs(saved_model_dir)
+makedirs(test_result_dir)
+makedirs(performance_images)
+
 
 all_targets = listdir(image_link_path)
 
@@ -20,9 +30,6 @@ for csv_file in all_targets:
     image_folder_name = csv_file.split(".")[0]
 
     image_folder_path = join(download_dir, image_folder_name)
-    # Check if image folder path exists, if not create it
-    if not exists(image_folder_path):
-        makedirs(image_folder_path)
 
     image_urls = df.iloc[:, 0]
 
