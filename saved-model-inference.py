@@ -5,7 +5,8 @@ from tensorflow.keras.preprocessing.image import load_img
 
 model_path = "saved-model/george_test_task"
 
-classify_image = "dataset/george_test_task/georges/0a5f7b5996063605dd05887ef4d31855.jpg"
+# classify_image = "dataset/george_test_task/georges/0a74a65e38cf3682389f9780000e63b0.jpg"
+classify_image = "dataset/george_test_task/non_georges/0a869d67deaaa70385fae7f70b92a557.jpg"
 
 classes_values = listdir("dataset/george_test_task")
 

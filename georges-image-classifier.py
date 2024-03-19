@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 
 classes_values = listdir("dataset/george_test_task")
 
-
 classes = len(classes_values)
 
 print("Target classes: ", classes_values)
