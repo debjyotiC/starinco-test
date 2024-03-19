@@ -35,7 +35,7 @@ ax.set_yticks(range(len(classes_values)))
 # labels, title and ticks
 ax.set_xlabel('Predicted labels', fontsize=12)
 ax.set_ylabel('True labels', fontsize=12)
-ax.set_title(f'Confusion Matrix for thermal image classifier with accuracy {round(acc, 2)}')
+ax.set_title(f'Confusion Matrix for image classifier with accuracy {round(acc, 2)}')
 ax.xaxis.set_ticklabels(classes_values, fontsize=10, rotation=45)
 ax.yaxis.set_ticklabels(classes_values, fontsize=10, rotation=0)
 plt.tight_layout()
