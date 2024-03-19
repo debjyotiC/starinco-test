@@ -50,5 +50,5 @@ python3 unseen-inference-metrics.py
 
 The current model based on a simple CNN exhibits the following metrics:
 
-![Confusion Matrix](https://github.com/debjyotiC/starinco-test/blob/main/images/confusion_matrix.png)
+![Confusion Matrix](<img align="center" src="https://github.com/debjyotiC/starinco-test/blob/main/images/confusion_matrix.png" width="580">)
 
