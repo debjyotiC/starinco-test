@@ -50,14 +50,14 @@ python3 unseen-inference-metrics.py
 
 The current model based on a simple CNN exhibits the following metrics:
 
-<img alt="Confusion Matrix" height="300" src="https://github.com/debjyotiC/starinco-test/blob/main/images/confusion_matrix.png" width="300"/>
+<img alt="Confusion Matrix" height="400" src="https://github.com/debjyotiC/starinco-test/blob/main/images/confusion_matrix.png" width="400"/>
 
 ### Rationale behind Model Selection and Possible Improvements
 
 #### Model Selection Rationale:
 1. **Convolutional Neural Network (CNN)**:
-   - CNNs are widely used for image classification tasks due to their ability to automatically learn spatial hierarchies of features.
-   - The architecture of the chosen CNN has been kept simple so that training it does not explicitly require a specialised hardware like GPU.
+   - The architecture of the chosen CNN has been kept simple (i.e. 2 layers) so that training it does not explicitly require a specialised hardware like GPU.
+   - Drop out layers have been added to prevent over fitting.
 
 2. **Layer Configuration**:
    - The model starts with a sequence of convolutional layers with increasing filters, allowing the network to capture complex patterns.
@@ -76,6 +76,7 @@ The current model based on a simple CNN exhibits the following metrics:
 
 3. **Model Architecture Modifications**:
    - Increasing the depth or width of the CNN architecture might capture more intricate features.
+   - Even moving to more complex model like ResNet50 or MobileNet could prove benificial. 
    - Adding batch normalization layers could mitigate over fitting.
 
 4. **Ensemble Methods**:
@@ -83,7 +84,5 @@ The current model based on a simple CNN exhibits the following metrics:
    - Combining predictions from multiple models can often yield better results than a single model.
 
 ### Conclusion:
-In this task, a basic CNN-based model was trained for image classification with 77% accuracy. 
-The selected architecture demonstrated the capability to learn relevant features from the data, resulting in decent accuracy on both training and validation sets.
-Through techniques like data augmentation, hyperparameter tuning, and potential modifications in the model architecture, the classification performance could be further enhanced. 
-Moreover, experimenting with ensemble methods could provide additional boosts in accuracy.
+In this task, a basic CNN-based model was trained for image classification with 78% accuracy. The said model was chosen owning its simplicity, the dataset made available for the training had images with extensions other then ".jpg", such images were not processed during the trainig. Moreover, majority of the images provided were of different height and weidth, this was tacked using python's PIL package. The model initially had more confidence on the training data compared to the testing set, this was tacked using dopout layers. Overall, the simple CNN model is nowhere near perfect, instead it proves as a good staring point into duilding networks for image classification. 
+
