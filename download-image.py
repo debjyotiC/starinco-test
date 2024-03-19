@@ -14,10 +14,6 @@ for directory in [download_dir, saved_model_dir, test_result_dir, performance_im
 
 all_targets = os.listdir(image_link_path)
 
-# Check if download directory exists, if not create it
-if not os.path.exists(download_dir):
-    os.makedirs(download_dir)
-
 for csv_file in all_targets:
     full_path = os.path.join(image_link_path, csv_file)
     print(f"Processing image links from {csv_file}")
